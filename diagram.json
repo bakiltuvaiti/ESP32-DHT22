@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Bakeel Altwaiti",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -21.99, "left": -57.96, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 47.72,
+      "left": 131.6,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -55.46, "left": 57.7, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-26.92", "v47.29" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-17.41", "v47.29" ] ],
+    [ "lcd1:SDA", "esp:D21", "yellow", [ "h-73.69", "v-57.81" ] ],
+    [ "lcd1:SCL", "esp:D22", "blue", [ "h-82.41", "v-96.21" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v73.43", "h-20.09" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ]
+  ]
+}
